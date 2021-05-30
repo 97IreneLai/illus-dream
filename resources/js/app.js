@@ -28,7 +28,7 @@ Vue.use(vmodal);
 // Set Vue authentication
 Vue.use(VueAxios, axios);
 // axios.defaults.baseURL = 'http://localhost:8000/';
-axios.defaults.baseURL = 'http://illusdream.test/'
+axios.defaults.baseURL = 'http://illus-dream.test/'
 // window.Promise = require('es6-promise').Promise;
 
 const store = new Vuex.Store(storeData);

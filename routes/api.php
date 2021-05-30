@@ -3,6 +3,8 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\MyIllustrationController;
+use App\Http\Controllers\IllustrationGalleryController;
 
 // use App\Http\Controllers\AuthController;
 
@@ -25,35 +27,10 @@ Route::group(['prefix' => 'auth'], function ($router) {
     Route::put('/update-profile',  [AuthController::class, 'updateProfile']);
 });
 
-// Route::group(['middleware' => 'auth.jwt'], function () {
-//     Route::post('logout', [AuthController::class, 'logout']);
-// });
-
-
-// Route::group(['middleware' => 'auth.jwt'], function () {
- 
-   
-  
-// });
-
-// Route::post('me', [AuthController::class, 'me']);
-// Route::prefix('jwt.auth')->group(function () {
-//     Route::post('register', 'App\Http\Controllers\AuthController@register');
-//     Route::post('login', 'App\Http\Controllers\AuthController@login');
-// });
-
-// Route::group(['middleware' => [ 'jwt', 'jwt.auth']], function () {
-//     Route::post('register', [AuthController::class, 'register']);
-//     Route::post('login', [AuthController::class, 'login']);
-
-// });
-
-// Route::group(['prefix' => 'auth'], function ($router) {
-//     Route::post('register', [AuthController::class, 'register']);
-//     Route::post('login', [AuthController::class, 'login']);
-//  });
-
-// Route::post('register', [AuthController::class, 'register']);
+Route::group(['prefix' => 'illustration'], function ($router) { 
+    Route::post('/',  [MyIllustrationController::class, 'saveIllus']);
+    Route::get('/', [IllustrationGalleryController::class, 'getIllustrationGallery']);
+});
 
 //basic route
 Route::middleware('auth:api')->get('/user', function (Request $request) {
