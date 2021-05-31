@@ -15,7 +15,7 @@
                                 <img class="profile" src="/img/default.png" alt="">
                             </div>
                             <div class="my-auto ml-5">
-                                <button type="submit" class="btn upload text"><i class="fas fa-upload fa-sm pr-2"></i>Upload new picture</button>
+                                <button type="submit" class="btn upload text"><img src="/img/upload.svg" class="pr-2" style="width:25px"/>new picture</button>
                             </div>
                         </div>
                         <div class="form-group col-10 p-0 m-0">
@@ -56,7 +56,7 @@
                                 </template> -->
                             </div>
                             <div class="my-auto ml-5">
-                                <button type="submit" class="btn upload text"><i class="fas fa-upload fa-sm pr-2"></i>Upload new picture</button>
+                                <button type="submit" class="btn upload text"><img src="/img/upload.svg" class="pr-2" style="width:25px"/>Upload new picture</button>
                             </div>
                         </div>
                         <div class="form-group col-10 p-0 m-0">

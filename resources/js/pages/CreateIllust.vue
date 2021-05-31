@@ -1,44 +1,62 @@
 <template>
     <div class="flex-column">
         <!-- top navigation bar -->
-        <div class="header" style="background-color: #264D59; padding: 0 25px">
+        <div class="header d-flex" style="background-color: #264D59; padding: 0 25px">
+            <h3 class="col-2 header-title m-0">Illus Dream</h3>
             <nav class="navbar navbar-expand-md col-12">
-                <h3 class="col-2 header-title m-0 p-0">Illus Dream</h3>
                 <div class="col-10 collapse navbar-collapse m-0 p-0">
-                    <div class="navbar-nav pt-1 w-100" style="height:55px; font-size:16px;">
+                    <div class="navbar-nav pt-1 w-100" style="font-size:16px;">
                         <button class="btn1 nav-item nav-link d-flex flex-column"
                             @click="undo()" :disabled="!canUndo">
-                            <i class="align-self-center fas fa-undo-alt fa-lg"></i>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="align-self-center nav-icon" width="54" height="54" viewBox="0 0 54 54">
+                                <path id="FontAwsome_undo_" data-name="FontAwsome (undo)" d="M22.735,24.036H1.285A1.285,1.285,0,0,1,0,22.75V1.286A1.285,1.285,0,0,1,1.285,0H6.424A1.285,1.285,0,0,1,7.709,1.286V9.655A26.57,26.57,0,1,1,9.618,47.12a1.289,1.289,0,0,1-.05-1.866L13.2,41.614a1.282,1.282,0,0,1,1.756-.056,18.858,18.858,0,1,0-2.748-25.236H22.735a1.285,1.285,0,0,1,1.285,1.286V22.75A1.285,1.285,0,0,1,22.735,24.036Z" />
+                            </svg>
                             <span>Undo</span>
                         </button>
                         <button class="btn1 nav-item nav-link d-flex flex-column"
                             @click="redo()" :disabled="!canRedo">
-                            <i class="align-self-center fas fa-redo-alt fa-lg"></i>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="align-self-center nav-icon" width="54" height="54" viewBox="0 0 54 54">
+                                <path id="FontAwsome_redo_" data-name="FontAwsome (redo)" d="M60.715,0H55.639a1.285,1.285,0,0,0-1.285,1.347l.428,8.867a26.571,26.571,0,1,0-2.435,36.939,1.286,1.286,0,0,0,.051-1.867l-3.64-3.643A1.284,1.284,0,0,0,47,41.583,18.856,18.856,0,1,1,50.2,16.907l-10.871-.522a1.285,1.285,0,0,0-1.346,1.286v5.08a1.285,1.285,0,0,0,1.285,1.286h21.45A1.285,1.285,0,0,0,62,22.751V1.286A1.285,1.285,0,0,0,60.715,0Z" transform="translate(-8)"/>
+                            </svg>
                             <span>Redo</span>
                         </button>
                         <button class="btn1 nav-item nav-link d-flex flex-column"
                             @click="clear()">
-                            <i class="align-self-center fas fa-eraser fa-lg"></i>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="align-self-center nav-icon" width="54" height="54" viewBox="0 0 54 54">
+                                <path id="FontAwsome_eraser_" data-name="FontAwsome (eraser)" d="M52.516,61.162a6.385,6.385,0,0,0,0-8.182L35.642,33.694a4.628,4.628,0,0,0-7.16,0l-27,30.857a6.385,6.385,0,0,0,0,8.182L11.607,84.305A4.765,4.765,0,0,0,15.187,86H52.734A1.365,1.365,0,0,0,54,84.553V79.732a1.365,1.365,0,0,0-1.266-1.446h-15.2L52.516,61.162ZM20.6,53.614,35.087,70.172l-7.1,8.114h-12.1L7.448,68.643,20.6,53.614Z" transform="translate(0.001 -32)"/>
+                            </svg>
                             <span>Clear All</span>
                         </button>
-                        <div class="nav-item nav-link d-flex flex-column">
+                        <div class="nav-item nav-link d-flex flex-column mt-2">
                             <input v-model="board.name" class="title" type="text" placeholder="Untitled">
                         </div>
                         <div class="nav-item nav-link d-flex flex-column ml-auto pr-0">
-                            <div class="btn-group">
+                            <div class="btn-group mt-1">
                                 <button 
                                     @click.prevent="save()"
                                     type="button" 
                                     class="btn1 btn text3 border-right-0 pt-1" 
                                     style="font-size:16px">Save
-                                    <i class="far fa-save fa-lg pl-2" style="line-height: 1"></i>
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="nav-icon pl-1 pb-1" width="54" height="54" viewBox="0 0 54 54">
+                                        <path id="Icon_awesome-save" data-name="Icon awesome-save" d="M52.305,14.055,42.195,3.945A5.786,5.786,0,0,0,38.1,2.25H5.786A5.786,5.786,0,0,0,0,8.036V50.464A5.786,5.786,0,0,0,5.786,56.25H48.214A5.786,5.786,0,0,0,54,50.464V18.146a5.786,5.786,0,0,0-1.695-4.091ZM27,48.536a7.714,7.714,0,1,1,7.714-7.714A7.714,7.714,0,0,1,27,48.536ZM38.571,11.83V23.946a1.446,1.446,0,0,1-1.446,1.446H9.161a1.446,1.446,0,0,1-1.446-1.446V11.411A1.446,1.446,0,0,1,9.161,9.964H36.706a1.446,1.446,0,0,1,1.023.424l.419.419a1.446,1.446,0,0,1,.424,1.023Z" transform="translate(0 -2.25)"/>
+                                    </svg>
+
+                                    <!-- <i class="far fa-save fa-lg pl-2" style="line-height: 1"></i> -->
                                 </button>
                                 <button type="button" class="btn1 btn dropdown-toggle dropdown-toggle-split text" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     <span class="sr-only">Toggle Dropdown</span>
                                 </button>
                                 <div class="dropdown-menu dropdown-menu-right p-0 text-center">
-                                    <a class="dropdown-item text2" href="#">PNG <i class="fas fa-download fa-lg pl-2"></i></a>
-                                    <a class="dropdown-item text2" href="#">SVG <i class="fas fa-download fa-lg pl-2"></i></a>
+                                    <a class="dropdown-item text2" href="#">PNG 
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="download-icon pl-2" width="54" height="54" viewBox="0 0 54 54">
+                                            <path id="Icon_awesome-download" data-name="Icon awesome-download" d="M22.781,0h8.438A2.525,2.525,0,0,1,33.75,2.531V20.25H43a2.105,2.105,0,0,1,1.487,3.6L28.445,39.9a2.043,2.043,0,0,1-2.879,0L9.5,23.846a2.105,2.105,0,0,1,1.487-3.6h9.26V2.531A2.525,2.525,0,0,1,22.781,0ZM54,39.656V51.469A2.525,2.525,0,0,1,51.469,54H2.531A2.525,2.525,0,0,1,0,51.469V39.656a2.525,2.525,0,0,1,2.531-2.531H18l5.168,5.168a5.4,5.4,0,0,0,7.657,0L36,37.125H51.469A2.525,2.525,0,0,1,54,39.656ZM40.922,48.938a2.109,2.109,0,1,0-2.109,2.109A2.116,2.116,0,0,0,40.922,48.938Zm6.75,0a2.109,2.109,0,1,0-2.109,2.109A2.116,2.116,0,0,0,47.672,48.938Z"/>
+                                        </svg>
+                                    </a>
+                                    <a class="dropdown-item text2" href="#">SVG
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="download-icon pl-2" width="54" height="54" viewBox="0 0 54 54">
+                                            <path id="Icon_awesome-download" data-name="Icon awesome-download" d="M22.781,0h8.438A2.525,2.525,0,0,1,33.75,2.531V20.25H43a2.105,2.105,0,0,1,1.487,3.6L28.445,39.9a2.043,2.043,0,0,1-2.879,0L9.5,23.846a2.105,2.105,0,0,1,1.487-3.6h9.26V2.531A2.525,2.525,0,0,1,22.781,0ZM54,39.656V51.469A2.525,2.525,0,0,1,51.469,54H2.531A2.525,2.525,0,0,1,0,51.469V39.656a2.525,2.525,0,0,1,2.531-2.531H18l5.168,5.168a5.4,5.4,0,0,0,7.657,0L36,37.125H51.469A2.525,2.525,0,0,1,54,39.656ZM40.922,48.938a2.109,2.109,0,1,0-2.109,2.109A2.116,2.116,0,0,0,40.922,48.938Zm6.75,0a2.109,2.109,0,1,0-2.109,2.109A2.116,2.116,0,0,0,47.672,48.938Z"/>
+                                        </svg>
+                                    </a>
                                 </div>
                             </div>
                         </div>
@@ -52,7 +70,12 @@
                 <div class="row">
                     <div class="sidenav col-1 px-0">
                         <div class="flex-column menu" id="menu">
-                            <button class="btn2" @click="backHome()" style="padding: 6px 19px"><i class="fas fa-home fa-2x"></i>Home</button>                           
+                            <button class="btn2" @click="backHome()" style="padding: 6px 19px">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="45" height="40" viewBox="0 0 45 40" class="icon-svg">
+                                    <path id="FontAwsome_home_" data-name="FontAwsome (home)" d="M21.888,42.427l-14.4,13.56V70.621a1.348,1.348,0,0,0,1.25,1.429l8.754-.026A1.349,1.349,0,0,0,18.733,70.6V62.049a1.348,1.348,0,0,1,1.25-1.429h5a1.348,1.348,0,0,1,1.25,1.429v8.54A1.54,1.54,0,0,0,26.6,71.6a1.177,1.177,0,0,0,.885.42l8.751.028a1.348,1.348,0,0,0,1.25-1.429V55.977l-14.4-13.55a.861.861,0,0,0-1.2,0Zm22.751,9.216L38.108,45.49V33.122a1.011,1.011,0,0,0-.937-1.072H32.8a1.011,1.011,0,0,0-.937,1.072v6.484l-6.994-6.578a3.4,3.4,0,0,0-4.765,0L.325,51.643A1.18,1.18,0,0,0,.2,53.152l1.992,2.768a.909.909,0,0,0,.634.386.86.86,0,0,0,.687-.24l18.375-17.3a.861.861,0,0,1,1.2,0l18.376,17.3a.86.86,0,0,0,1.32-.143l1.992-2.768a1.179,1.179,0,0,0,.209-.787,1.122,1.122,0,0,0-.341-.724Z" transform="translate(0.015 -32.05)" />
+                                </svg>
+                                Home
+                            </button>                           
                             <button class="btn2" v-for="drawer in drawers" :key="drawer.id" :class="{activeBtn:drawer.id == selected}" @click.prevent="activated(drawer.id)" >
                                 <span v-html="drawer.icon"></span>{{drawer.text}}
                             </button>                          
@@ -63,7 +86,11 @@
                     <div v-if="!active" class="sub-sidenav col-3" >
                         <div class="flex-column">
                              <div class="form-group has-search">
-                                <span class="fa fa-search form-control-feedback"></span>
+                                <span class="form-control-feedback">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="search-icon" width="35.997" height="36.004" viewBox="0 0 35.997 36.004">
+                                        <path id="Icon_awesome-search" data-name="Icon awesome-search" d="M35.508,31.127l-7.01-7.01a1.686,1.686,0,0,0-1.2-.492H26.156a14.618,14.618,0,1,0-2.531,2.531V27.3a1.686,1.686,0,0,0,.492,1.2l7.01,7.01a1.681,1.681,0,0,0,2.384,0l1.99-1.99a1.7,1.7,0,0,0,.007-2.391Zm-20.883-7.5a9,9,0,1,1,9-9A8.995,8.995,0,0,1,14.625,23.625Z"/>
+                                    </svg>
+                                </span>
                                 <input v-model="search" type="text" class="form-control text" placeholder="Search...">
                             </div>
                             <v-swatches 
@@ -169,7 +196,9 @@ export default {
                 {
                     id: 1,
                     text: "Character",
-                    icon: '<i class="fas fa-users fa-2x"></i>',
+                    icon: '<svg xmlns="http://www.w3.org/2000/svg" class="icon-svg" width="52" height="37" viewBox="0 0 52 37">'+
+                            '<path id="FontAwsome_user-friends_" data-name="FontAwsome (user-friends)" d="M15.6,50.5a9.251,9.251,0,1,0-9.1-9.25A9.171,9.171,0,0,0,15.6,50.5Zm6.24,2.643h-.674a12.381,12.381,0,0,1-11.131,0H9.36A9.441,9.441,0,0,0,0,62.657v2.379A3.934,3.934,0,0,0,3.9,69H27.3a3.934,3.934,0,0,0,3.9-3.964V62.657A9.441,9.441,0,0,0,21.84,53.143ZM39,50.5a7.93,7.93,0,1,0-7.8-7.929A7.867,7.867,0,0,0,39,50.5Zm3.9,2.643h-.309a10.09,10.09,0,0,1-7.182,0H35.1a8.914,8.914,0,0,0-4.526,1.272A12.194,12.194,0,0,1,33.8,62.657v3.171c0,.182-.041.355-.049.529H48.1A3.934,3.934,0,0,0,52,62.393,9.171,9.171,0,0,0,42.9,53.143Z" transform="translate(0 -32)"/>' +
+                            '</svg>',
                     items: [
                         {
                             id: 1,
@@ -217,7 +246,9 @@ export default {
                 {
                     id: 2,
                     text: "Element",
-                    icon: '<i class="fas fa-vector-square fa-2x"></i>',
+                    icon: '<svg xmlns="http://www.w3.org/2000/svg" class="icon-svg" width="40" height="40" viewBox="0 0 40 40">'+
+                            '<path id="FontAwsome_vector-square_" data-name="FontAwsome (vector-square)" d="M40,10V2.5A2.5,2.5,0,0,0,37.5,0H30a2.5,2.5,0,0,0-2.5,2.5h-15A2.5,2.5,0,0,0,10,0H2.5A2.5,2.5,0,0,0,0,2.5V10a2.5,2.5,0,0,0,2.5,2.5v15A2.5,2.5,0,0,0,0,30v7.5A2.5,2.5,0,0,0,2.5,40H10a2.5,2.5,0,0,0,2.5-2.5h15A2.5,2.5,0,0,0,30,40h7.5A2.5,2.5,0,0,0,40,37.5V30a2.5,2.5,0,0,0-2.5-2.5v-15A2.5,2.5,0,0,0,40,10ZM32.5,5H35V7.5H32.5ZM5,5H7.5V7.5H5ZM7.5,35H5V32.5H7.5ZM35,35H32.5V32.5H35Zm-2.5-7.5H30A2.5,2.5,0,0,0,27.5,30v2.5h-15V30A2.5,2.5,0,0,0,10,27.5H7.5v-15H10A2.5,2.5,0,0,0,12.5,10V7.5h15V10A2.5,2.5,0,0,0,30,12.5h2.5Z"/>' +
+                            '</svg>',
                     items: [
                         {
                             id: 1,
@@ -271,7 +302,9 @@ export default {
                 {
                     id: 3,
                     text: "Background",
-                    icon: '<i class="far fa-file-image fa-2x"></i>',
+                    icon: '<svg xmlns="http://www.w3.org/2000/svg" class="icon-svg" width="40" height="40" viewBox="0 0 40 40">'+
+                            '<path id="Icon_material-wallpaper" data-name="Icon material-wallpaper" d="M7,7H21V3H7A4.012,4.012,0,0,0,3,7V21H7ZM19,25,11,35H35l-6-8-4.06,5.42Zm14-9a3,3,0,1,0-3,3A3,3,0,0,0,33,16ZM39,3H25V7H39V21h4V7A4.012,4.012,0,0,0,39,3Zm0,36H25v4H39a4.012,4.012,0,0,0,4-4V25H39ZM7,25H3V39a4.012,4.012,0,0,0,4,4H21V39H7Z" transform="translate(-3 -3)"/>'+
+                            '</svg>',
                     items: [
                         {
                             id: 1,
@@ -324,6 +357,13 @@ export default {
             console.log(this.$refs.dropZone);
             return this.$refs.dropZone;
         },
+
+        // iconActive() {
+        //     return{
+        //         'activeBtn' : this.selected
+        //     }
+           
+        // }
     },
 
     methods: {
@@ -425,6 +465,7 @@ export default {
 </script>
 
 <style scoped>
+
     ::v-deep .center {
         display: block;
         margin-left: auto;
@@ -442,6 +483,17 @@ export default {
         height: 93px;
         width: 93px;
     }
+
+    ::v-deep .icon-svg:hover{
+        fill: #FBAD6B;
+    }
+
+    ::v-deep .icon-svg{
+        fill: #47988f;
+        height: 45px;
+        width: 45px
+    }
+    
     
 </style>
 
@@ -497,6 +549,7 @@ export default {
     }
     .navbar{
         padding: 0;
+        flex-wrap: nowrap;
     }
 
     .navbar-brand{
@@ -558,13 +611,22 @@ export default {
 
     button.activeBtn{
         background: #FFF4CA;
-        color: #D46C51;
+        // color: #D46C51;
         box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.35);      
     }
 
     .btn2:hover{
         color: $quartery-color;
     }
+
+    .icon-svg:hover{
+        fill: $quartery-color;
+    }
+
+    // svg{
+    //     fill: $secondary-color;
+    // }
+   
 
     .btn1:hover{
         color: $tertiary-color;
@@ -611,6 +673,28 @@ export default {
         &::placeholder{
             color: #C3C3C3;
         }
+    }
+
+    .nav-icon:hover{
+        fill: $tertiary-color;
+    }
+
+    .nav-icon{
+        fill: white;
+        width: 22px;
+        height: 22px;
+    }
+
+    .download-icon{
+        fill: $primary-color;
+        width: 27px;
+        height: 27px;
+    }
+
+    .search-icon{
+        fill: #c0c0c0;
+        height:17px;
+        width: 17px
     }
 
     .workspace {

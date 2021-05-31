@@ -6,7 +6,7 @@
                 <div class="col-7 m-0 p-0 align-self-center" >
                     <div class="d-flex text search-mobile" style="max-width:500px; min-width:300px">
                             <input type="text" v-model="search" placeholder="Search..." name="search2">
-                            <div class="align-self-center"><i class="fa fa-search fa-lg pl-2" style="color: #47988f"></i></div>
+                            <div class="align-self-center"><img src="/img/search.svg" class="pl-2" style="width: 30px"/></div>
                     </div>
                 </div>
                 <div class="d-flex col-5 justify-content-end m-0 p-0 pr-2">
@@ -45,7 +45,7 @@
             <div class="col-7 m-0 p-0 align-self-center">
                 <div class="d-flex text search" style="max-width:500px; min-width:300px">
                         <input  type="text" v-model="search" placeholder="Search..." name="search2">
-                        <div class="align-self-center"><i class="fa fa-search fa-lg pl-5"></i></div>
+                        <div class="align-self-center"><img src="/img/search.svg" class="pl-5" style="width: 75px"/></div>
                 </div>
             </div>
             <div class="d-flex col-5 justify-content-end m-0 p-0 pr-2">

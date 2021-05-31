@@ -36,21 +36,21 @@
       <!----- mobile view ----->
       <div class="container flex-column mt-2" v-if="mobileView">
         <div class="card mr-auto">
-          <i class="align-self-center fas fa-download fa-5x circle rounded-icon1"/>
+          <i class="align-self-center circle rounded-icon1"/>
           <div class="card-body">
             <h3 class="card-text text-center">Download Free</h3>
           </div>
         </div>
 
         <div class="card mr-auto">
-         <i class="align-self-center fas fa-fingerprint fa-5x circle rounded-icon2"/>
+         <i class="align-self-center circle rounded-icon2"/>
           <div class="card-body">
             <h3 class="card-text text-center">Unique and Creative</h3>
           </div>
         </div>
 
         <div class="card">
-         <i class="align-self-center fas fa-pencil-ruler fa-5x circle rounded-icon3"></i>
+         <i class="align-self-center circle rounded-icon3"></i>
           <div class="card-body">
             <h3 class="card-text text-center">Customisable</h3>
           </div>
@@ -60,21 +60,21 @@
       <!----- not mobile view ----->
       <div class="container d-flex mt-5 pt-4" v-if="!mobileView">
         <div class="card mr-auto">
-          <i class="align-self-center fas fa-download fa-5x circle rounded-icon1"/>
+          <i class="align-self-center circle rounded-icon1"/>
           <div class="card-body">
             <h3 class="card-text">Download Free</h3>
           </div>
         </div>
 
         <div class="card mr-auto">
-         <i class="align-self-center fas fa-fingerprint fa-5x circle rounded-icon2"/>
+         <i class="align-self-center circle rounded-icon2"/>
           <div class="card-body">
             <h3 class="card-text">Unique and Creative</h3>
           </div>
         </div>
 
         <div class="card">
-         <i class="align-self-center fas fa-pencil-ruler fa-5x circle rounded-icon3"></i>
+         <i class="align-self-center circle rounded-icon3"></i>
           <div class="card-body">
             <h3 class="card-text">Customisable</h3>
           </div>
@@ -129,15 +129,15 @@ export default {
     background-size: 150px 140px;
 
     &.rounded-icon1{
-      background-image: url(/img/Ellipse9.svg);
+      background-image: url(/img/Group61.svg);
     }
 
      &.rounded-icon2{
-      background-image: url(/img/Ellipse11.svg);
+      background-image: url(/img/Group62.svg);
     }
 
      &.rounded-icon3{
-      background-image: url(/img/Ellipse12.svg);
+      background-image: url(/img/Group63.svg);
     }
   }
 

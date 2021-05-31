@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="238" height="233" viewBox="0 0 238 233">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.902" y1="0.357" x2="0.296" y2="0.743" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#f9e181"/>
+      <stop offset="0.448" stop-color="#d46c51"/>
+      <stop offset="1" stop-color="#244c48"/>
+    </linearGradient>
+  </defs>
+  <g id="Group_61" data-name="Group 61" transform="translate(-177 -1099)">
+    <ellipse id="Ellipse_9" data-name="Ellipse 9" cx="119" cy="116.5" rx="119" ry="116.5" transform="translate(177 1099)" fill="url(#linear-gradient)"/>
+    <path id="FontAwsome_download_" data-name="FontAwsome (download)" d="M55.147,0H75.572A5.987,5.987,0,0,1,81.7,5.866V46.929h22.391a4.856,4.856,0,0,1,3.6,8.335l-38.833,37.2a5.1,5.1,0,0,1-6.97,0L23,55.264a4.856,4.856,0,0,1,3.6-8.335H49.02V5.866A5.987,5.987,0,0,1,55.147,0ZM130.72,91.9v27.375a5.987,5.987,0,0,1-6.127,5.866H6.127A5.987,5.987,0,0,1,0,119.278V91.9a5.987,5.987,0,0,1,6.127-5.866H43.582l12.51,11.977a13.5,13.5,0,0,0,18.536,0l12.51-11.977h37.454A5.987,5.987,0,0,1,130.72,91.9ZM99.061,113.412a5.111,5.111,0,1,0-5.106,4.888A5.016,5.016,0,0,0,99.061,113.412Zm16.34,0a5.111,5.111,0,1,0-5.106,4.888A5.016,5.016,0,0,0,115.4,113.412Z" transform="translate(231 1152.95)" fill="#fff"/>
+  </g>
+</svg>

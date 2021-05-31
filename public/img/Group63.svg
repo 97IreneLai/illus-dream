@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="238" height="233" viewBox="0 0 238 233">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.057" y1="0.326" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#284e5b"/>
+      <stop offset="0.606" stop-color="#df9060"/>
+      <stop offset="1" stop-color="#f9e181"/>
+    </linearGradient>
+  </defs>
+  <g id="Group_63" data-name="Group 63" transform="translate(-1505 -1099)">
+    <ellipse id="Ellipse_12" data-name="Ellipse 12" cx="119" cy="116.5" rx="119" ry="116.5" transform="translate(1505 1099)" fill="url(#linear-gradient)"/>
+    <path id="FontAwsome_pencil-ruler_" data-name="FontAwsome (pencil-ruler)" d="M28.34,61.646,63.189,27.651,51.764,16.5,35.793,32.087a2.087,2.087,0,0,1-2.9,0l-2.9-2.832a1.966,1.966,0,0,1,0-2.832L45.959,10.841l-8.711-8.5a8.359,8.359,0,0,0-11.616,0L2.4,25a7.878,7.878,0,0,0,0,11.333L28.34,61.646ZM128.933,32.138a11.929,11.929,0,0,0,0-17.162L117.215,3.545a12.664,12.664,0,0,0-17.6,0L87.7,15.168l29.313,28.6ZM81.844,20.888,4.937,95.911.079,123.054a5.431,5.431,0,0,0,6.367,6.2L34.27,124.5l76.886-75.015ZM130.17,93l-8.711-8.5-15.972,15.583a2.087,2.087,0,0,1-2.9,0l-2.9-2.832a1.971,1.971,0,0,1,0-2.832l15.972-15.583-11.43-11.151L69.375,101.678l25.949,25.314a8.359,8.359,0,0,0,11.616,0l23.23-22.661a7.875,7.875,0,0,0,0-11.333Z" transform="translate(1558.005 1150.51)" fill="#fff"/>
+  </g>
+</svg>
