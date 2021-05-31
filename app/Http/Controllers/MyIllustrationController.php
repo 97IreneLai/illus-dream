@@ -9,10 +9,16 @@ use Symfony\Component\HttpFoundation\Response;
 
 class MyIllustrationController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth:api');
+    }
+
     public function saveIllus(Request $request){
 
-        $userId = Auth::user()->id;
-        // $userId = auth('api')->user()->id;
+        // $userId = auth(api)::user()->id;
+        $userId = auth('api')->user()->id;
         // $userId = 1;
         // dd($userId);
         // $userId = null;

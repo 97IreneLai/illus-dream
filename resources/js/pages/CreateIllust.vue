@@ -401,12 +401,16 @@ export default {
         },
 
         save() {
+            const token = this.$store.getters.currentUser.token
             const postData = {
                 'illustration_svg': this.board.workspace,
                 'name': this.board.name,
+                // 'user_id': this.$store.getters.currentUser.id
             }
+            console.log(postData)
             axios.post('/api/illustration', postData, {
                 headers: {
+                    Authorization: `Bearer ${token}`,
                     "Content-Type": "application/json",
                 }
             }).then(response => {
