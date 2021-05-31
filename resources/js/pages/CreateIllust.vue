@@ -325,6 +325,10 @@ export default {
             console.log(this.$refs.dropZone);
             return this.$refs.dropZone;
         },
+
+        currentUser(){
+                return this.$store.getters.currentUser
+        },
     },
 
     methods: {
@@ -401,11 +405,12 @@ export default {
         },
 
         save() {
-            const token = this.$store.getters.currentUser.token
+            const token = this.currentUser.token
             const postData = {
-                'illustration_svg': this.board.workspace,
+                'illustration_svg': this.board.workspace.svg,
                 'name': this.board.name,
-                // 'user_id': this.$store.getters.currentUser.id
+                'user_id': this.currentUser.id,
+                // 'token': token
             }
             console.log(postData)
             axios.post('/api/illustration', postData, {
