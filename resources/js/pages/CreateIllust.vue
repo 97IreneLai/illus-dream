@@ -299,7 +299,6 @@ export default {
                     ]
                 }
             ],
-            userID: ''
         }
     },
 
@@ -324,10 +323,6 @@ export default {
         getDropZone() {
             console.log(this.$refs.dropZone);
             return this.$refs.dropZone;
-        },
-
-        currentUser(){
-                return this.$store.getters.currentUser
         },
     },
 
@@ -405,15 +400,14 @@ export default {
         },
 
         save() {
-            const token = this.currentUser.token
+            const token = this.$store.getters.currentUser.token
             const postData = {
                 'illustration_svg': this.board.workspace,
                 'name': this.board.name,
-                // 'user_id': this.currentUser.id,
-                // 'token': token
+
             }
             console.log(postData)
-            axios.post('/api/illustration', postData, {
+            axios.post('/api/illustration/', postData, {
                 headers: {
                     Authorization: `Bearer ${token}`,
                     "Content-Type": "application/json",
