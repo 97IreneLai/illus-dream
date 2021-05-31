@@ -17,11 +17,10 @@ class MyIllustrationController extends Controller
 
     public function saveIllus(Request $request){
 
-        // $userId = auth(api)::user()->id;
         $userId = auth('api')->user()->id;
+        // $userId = Auth::user()->id;
         // $userId = 1;
-        // dd($userId);
-        // $userId = null;
+    
 
         $illus = new MyIllustration();
         $illus->user_id = $userId;

@@ -407,9 +407,9 @@ export default {
         save() {
             const token = this.currentUser.token
             const postData = {
-                'illustration_svg': this.board.workspace.svg,
+                'illustration_svg': this.board.workspace,
                 'name': this.board.name,
-                'user_id': this.currentUser.id,
+                // 'user_id': this.currentUser.id,
                 // 'token': token
             }
             console.log(postData)
