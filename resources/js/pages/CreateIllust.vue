@@ -37,9 +37,6 @@
                                     type="button" 
                                     class="btn1 btn text3 border-right-0 pt-1" 
                                     style="font-size:16px">Save
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="nav-icon pl-1 pb-1" width="54" height="54" viewBox="0 0 54 54">
-                                        <path id="Icon_awesome-save" data-name="Icon awesome-save" d="M52.305,14.055,42.195,3.945A5.786,5.786,0,0,0,38.1,2.25H5.786A5.786,5.786,0,0,0,0,8.036V50.464A5.786,5.786,0,0,0,5.786,56.25H48.214A5.786,5.786,0,0,0,54,50.464V18.146a5.786,5.786,0,0,0-1.695-4.091ZM27,48.536a7.714,7.714,0,1,1,7.714-7.714A7.714,7.714,0,0,1,27,48.536ZM38.571,11.83V23.946a1.446,1.446,0,0,1-1.446,1.446H9.161a1.446,1.446,0,0,1-1.446-1.446V11.411A1.446,1.446,0,0,1,9.161,9.964H36.706a1.446,1.446,0,0,1,1.023.424l.419.419a1.446,1.446,0,0,1,.424,1.023Z" transform="translate(0 -2.25)"/>
-                                    </svg>
 
                                     <!-- <i class="far fa-save fa-lg pl-2" style="line-height: 1"></i> -->
                                 </button>
@@ -622,10 +619,6 @@ export default {
     .icon-svg:hover{
         fill: $quartery-color;
     }
-
-    // svg{
-    //     fill: $secondary-color;
-    // }
    
 
     .btn1:hover{

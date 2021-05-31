@@ -7,7 +7,13 @@
             <div v-if="mobileView" class="d-flex">
                 <div class="navigation-icon m-3"
                   @click="showNav = !showNav">
-                  <i class="fas fa-bars"></i>
+                  <svg xmlns="http://www.w3.org/2000/svg" class="mt-1" width="40" height="25" viewBox="0 0 43 33">
+                    <g id="Icon_feather-menu" data-name="Icon feather-menu" transform="translate(-3 -7.5)">
+                      <path id="Path_381" data-name="Path 381" d="M4.5,18h40" transform="translate(0 6)" fill="none" stroke="#284e5b" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+                      <path id="Path_382" data-name="Path 382" d="M4.5,9h40" transform="translate(0)" fill="none" stroke="#284e5b" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+                      <path id="Path_383" data-name="Path 383" d="M4.5,27h40" transform="translate(0 12)" fill="none" stroke="#284e5b" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+                    </g>
+                  </svg>
                 </div>
                 <h3 class="header-title m-3">Illus Dream</h3>
             </div>
@@ -70,10 +76,6 @@ import NavigationMobile from './components/NavigationMobile.vue';
 
   .navigation-icon {
     cursor: pointer;
-      i {
-        font-size: 2rem;
-        color: $primary-color;
-      }
   }
 
   .open{
