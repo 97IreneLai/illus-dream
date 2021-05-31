@@ -10,8 +10,6 @@ import vmodal from 'vue-js-modal';
 import Vue from 'vue';
 import vuetify from './plugins/vuetify' // path to vuetify export
 import Vuex from 'vuex';
-import { ValidationProvider} from 'vee-validate/dist/vee-validate.full.esm';
-import { ValidationObserver} from 'vee-validate';
 import { routes } from './router.js';
 import storeData from './store';
 import swal from 'sweetalert';
@@ -29,7 +27,6 @@ Vue.use(vmodal);
 Vue.use(VueAxios, axios);
 // axios.defaults.baseURL = 'http://localhost:8000/';
 // axios.defaults.baseURL = 'http://illus-dream.test/'
-// window.Promise = require('es6-promise').Promise;
 
 const store = new Vuex.Store(storeData);
 const Swal = swal;
@@ -41,15 +38,6 @@ const router = new VueRouter({
 
 window.axios = axios;
 window.eventBus = new Vue({})
-
-
-// const files = require.context('./', true, /\.vue$/i)
-// files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
-
-
-//vee-validation components
-// Vue.component('ValidationProvider', ValidationProvider);
-// Vue.component('ValidationObserver', ValidationObserver);
 
 //components
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
