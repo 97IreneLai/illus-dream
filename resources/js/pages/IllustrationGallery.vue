@@ -89,12 +89,12 @@
                     <div class="text-center card-overlay">
                         <div class="download-btn">
                             <button class="btn mr-4 text3">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="download-icon pr-1 pb-1" width="18" height="18" viewBox="0 0 24 24">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="download-icon" width="13" height="13" viewBox="0 0 24 24">
                                     <path id="FontAwsome_download_" data-name="FontAwsome (download)" d="M10.125,0h3.75A1.122,1.122,0,0,1,15,1.125V9h4.111a.936.936,0,0,1,.661,1.6l-7.13,7.134a.908.908,0,0,1-1.28,0L4.223,10.6A.936.936,0,0,1,4.884,9H9V1.125A1.122,1.122,0,0,1,10.125,0ZM24,17.625v5.25A1.122,1.122,0,0,1,22.875,24H1.125A1.122,1.122,0,0,1,0,22.875v-5.25A1.122,1.122,0,0,1,1.125,16.5H8l2.3,2.3a2.4,2.4,0,0,0,3.4,0L16,16.5h6.877A1.122,1.122,0,0,1,24,17.625ZM18.188,21.75a.938.938,0,1,0-.937.938A.94.94,0,0,0,18.188,21.75Zm3,0a.938.938,0,1,0-.937.938A.94.94,0,0,0,21.188,21.75Z"/>
                                 </svg>
                                 PNG</button>
                             <button class="btn text3">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="download-icon pr-1 pb-1" width="18" height="18" viewBox="0 0 24 24">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="download-icon" width="13" height="13" viewBox="0 0 24 24">
                                     <path id="FontAwsome_download_" data-name="FontAwsome (download)" d="M10.125,0h3.75A1.122,1.122,0,0,1,15,1.125V9h4.111a.936.936,0,0,1,.661,1.6l-7.13,7.134a.908.908,0,0,1-1.28,0L4.223,10.6A.936.936,0,0,1,4.884,9H9V1.125A1.122,1.122,0,0,1,10.125,0ZM24,17.625v5.25A1.122,1.122,0,0,1,22.875,24H1.125A1.122,1.122,0,0,1,0,22.875v-5.25A1.122,1.122,0,0,1,1.125,16.5H8l2.3,2.3a2.4,2.4,0,0,0,3.4,0L16,16.5h6.877A1.122,1.122,0,0,1,24,17.625ZM18.188,21.75a.938.938,0,1,0-.937.938A.94.94,0,0,0,18.188,21.75Zm3,0a.938.938,0,1,0-.937.938A.94.94,0,0,0,21.188,21.75Z"/>
                                 </svg>
                                 SVG</button>
@@ -115,12 +115,12 @@
                     <div class="text-center card-overlay">
                         <div class="download-btn">
                             <button class="btn mr-4 text3">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="download-icon pr-1 pb-1" width="18" height="18" viewBox="0 0 24 24">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="download-icon" width="13" height="13" viewBox="0 0 24 24">
                                     <path id="FontAwsome_download_" data-name="FontAwsome (download)" d="M10.125,0h3.75A1.122,1.122,0,0,1,15,1.125V9h4.111a.936.936,0,0,1,.661,1.6l-7.13,7.134a.908.908,0,0,1-1.28,0L4.223,10.6A.936.936,0,0,1,4.884,9H9V1.125A1.122,1.122,0,0,1,10.125,0ZM24,17.625v5.25A1.122,1.122,0,0,1,22.875,24H1.125A1.122,1.122,0,0,1,0,22.875v-5.25A1.122,1.122,0,0,1,1.125,16.5H8l2.3,2.3a2.4,2.4,0,0,0,3.4,0L16,16.5h6.877A1.122,1.122,0,0,1,24,17.625ZM18.188,21.75a.938.938,0,1,0-.937.938A.94.94,0,0,0,18.188,21.75Zm3,0a.938.938,0,1,0-.937.938A.94.94,0,0,0,21.188,21.75Z"/>
                                 </svg>
                                 PNG</button>
                             <button class="btn text3">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="download-icon pr-1 pb-1" width="18" height="18" viewBox="0 0 24 24">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="download-icon" width="13" height="13" viewBox="0 0 24 24">
                                     <path id="FontAwsome_download_" data-name="FontAwsome (download)" d="M10.125,0h3.75A1.122,1.122,0,0,1,15,1.125V9h4.111a.936.936,0,0,1,.661,1.6l-7.13,7.134a.908.908,0,0,1-1.28,0L4.223,10.6A.936.936,0,0,1,4.884,9H9V1.125A1.122,1.122,0,0,1,10.125,0ZM24,17.625v5.25A1.122,1.122,0,0,1,22.875,24H1.125A1.122,1.122,0,0,1,0,22.875v-5.25A1.122,1.122,0,0,1,1.125,16.5H8l2.3,2.3a2.4,2.4,0,0,0,3.4,0L16,16.5h6.877A1.122,1.122,0,0,1,24,17.625ZM18.188,21.75a.938.938,0,1,0-.937.938A.94.94,0,0,0,18.188,21.75Zm3,0a.938.938,0,1,0-.937.938A.94.94,0,0,0,21.188,21.75Z"/>
                                 </svg>
                                 SVG</button>
@@ -159,11 +159,11 @@ export default {
 
     methods: {
         loadIllustration() {
-            const token = this.$store.getters.currentUser.token
+            // const token = this.$store.getters.currentUser.token
             axios.get('/api/illustration', {
-                headers: {
-                    Authorization: `Bearer ${token}`
-                }
+                // headers: {
+                //     Authorization: `Bearer ${token}`
+                // }
             })
             
                 .then(response =>{
