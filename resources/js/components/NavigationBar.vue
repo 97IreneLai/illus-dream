@@ -240,6 +240,10 @@ import register from '../account/Register.vue';
         }
     }
 
+    .shadow{
+        box-shadow: 0 0.5rem 1rem rgb(0 0 0 / 15%)
+    }
+
     .profile{
         width: 50px;
         height: 50px;
