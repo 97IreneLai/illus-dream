@@ -114,12 +114,12 @@
                     </div>
                     <div class="text-center card-overlay">
                         <div class="download-btn">
-                            <button class="btn mr-4 text3">
+                            <button class="btn mr-4 text3" @click="downloadPNG()">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="download-icon" width="13" height="13" viewBox="0 0 24 24">
                                     <path id="FontAwsome_download_" data-name="FontAwsome (download)" d="M10.125,0h3.75A1.122,1.122,0,0,1,15,1.125V9h4.111a.936.936,0,0,1,.661,1.6l-7.13,7.134a.908.908,0,0,1-1.28,0L4.223,10.6A.936.936,0,0,1,4.884,9H9V1.125A1.122,1.122,0,0,1,10.125,0ZM24,17.625v5.25A1.122,1.122,0,0,1,22.875,24H1.125A1.122,1.122,0,0,1,0,22.875v-5.25A1.122,1.122,0,0,1,1.125,16.5H8l2.3,2.3a2.4,2.4,0,0,0,3.4,0L16,16.5h6.877A1.122,1.122,0,0,1,24,17.625ZM18.188,21.75a.938.938,0,1,0-.937.938A.94.94,0,0,0,18.188,21.75Zm3,0a.938.938,0,1,0-.937.938A.94.94,0,0,0,21.188,21.75Z"/>
                                 </svg>
                                 PNG</button>
-                            <button class="btn text3">
+                            <button class="btn text3" @click="downloadSVG">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="download-icon" width="13" height="13" viewBox="0 0 24 24">
                                     <path id="FontAwsome_download_" data-name="FontAwsome (download)" d="M10.125,0h3.75A1.122,1.122,0,0,1,15,1.125V9h4.111a.936.936,0,0,1,.661,1.6l-7.13,7.134a.908.908,0,0,1-1.28,0L4.223,10.6A.936.936,0,0,1,4.884,9H9V1.125A1.122,1.122,0,0,1,10.125,0ZM24,17.625v5.25A1.122,1.122,0,0,1,22.875,24H1.125A1.122,1.122,0,0,1,0,22.875v-5.25A1.122,1.122,0,0,1,1.125,16.5H8l2.3,2.3a2.4,2.4,0,0,0,3.4,0L16,16.5h6.877A1.122,1.122,0,0,1,24,17.625ZM18.188,21.75a.938.938,0,1,0-.937.938A.94.94,0,0,0,18.188,21.75Zm3,0a.938.938,0,1,0-.937.938A.94.94,0,0,0,21.188,21.75Z"/>
                                 </svg>
@@ -136,6 +136,7 @@
 <script>
 import VSwatches from 'vue-swatches'
 import 'vue-swatches/dist/vue-swatches.css'
+import '../Blob.js'
 
 export default {
     components: {
@@ -181,7 +182,34 @@ export default {
 
         handleView() {
           this.mobileView = window.innerWidth <= 995;
+        },
+
+        downloadSVG(evt) {
+            for(let i = 0; i <= this.items.length; i++){
+                const svgContent = this.items[i].illustration_svg;
+                console.log(svgContent)
+                    blob = new Blob([svgContent], {
+                        type: "image/svg+xml"
+                    }),
+                    // const url = window.URL.createObjectURL(blob),
+                    url = URL.createObjectURL(blob),
+                    link = evt.target;
+                link.target = "_blank";
+                link.download = "Illustration1.svg";
+                link.href = url;
+            }
+           
+        },
+
+        downloadPNG(evt) {
+            for(let i = 0; i <= this.items.length; i++){
+                const svgContent = this.items[i].illustration_svg;
+                // console.log(svgContent)
+
+            }
+           
         }
+
 
        
     },

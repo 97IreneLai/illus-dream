@@ -29,6 +29,7 @@ Route::group(['prefix' => 'auth'], function ($router) {
 
 Route::group(['prefix' => 'illustration'], function ($router) { 
     Route::post('/',  [MyIllustrationController::class, 'saveIllus']);
+    Route::get('/my-illustration', [MyIllustrationController::class, 'getIllus']);
     Route::get('/', [IllustrationGalleryController::class, 'getIllustrationGallery']);
 });
 
@@ -36,4 +37,5 @@ Route::group(['prefix' => 'illustration'], function ($router) {
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
 

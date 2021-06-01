@@ -32,4 +32,17 @@ class MyIllustrationController extends Controller
             'success' => true
         ], Response::HTTP_OK);
     }
+
+    public function getIllus(Request $request){
+      
+        $userId = Auth::user()->id;
+        $myillus = MyIllustration::select('my_illustrations.*')
+        ->where('my_illustrations.user_id', $userId)
+        ->get();
+
+        return response([
+            'myillus' => $myillus,
+            'hasIllustration' => count($myillus) > 0,
+        ]);
+    }
 }
