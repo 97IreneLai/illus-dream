@@ -48,7 +48,7 @@
                                         </div>
 
                                         <!------------password------------>
-                                        <div class="form-group">
+                                        <div class="form-group mb-1">
                                             <ValidationProvider name="Password" vid="password" rules="required|confirmedBy:@confirm" 
                                             v-slot="{ errors }">
                                                 <input placeholder="Enter your password" class="form-control"
@@ -56,6 +56,7 @@
                                                     id="password"
                                                     v-model="formRegister.password"                                                
                                                 >
+                                                <div class="error-messsage" style="color: grey">Please enter minimum 6 characters/numbers.</div>
                                                 <span class="error-messsage">{{ errors[0] }}</span>
                                             </ValidationProvider>                                           
                                         </div>
@@ -144,6 +145,10 @@ import { ValidationProvider, ValidationObserver, extend } from 'vee-validate/dis
                     .then(res => {
                         console.log(res);
                         this.$store.commit("registerSuccess", res);
+                        swal({
+                            icon: "success",
+                            text: "Sign Up Succesfully!",
+                        });
                         this.$modal.show('login');
                         this.$modal.hide('register');
                     })

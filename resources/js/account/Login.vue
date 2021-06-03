@@ -101,7 +101,7 @@ import { login } from'../auth';
                         this.$modal.hide('login');
                         swal({
                             icon: "success",
-                            text: "Login Succesfully!",
+                            text: "Sign In Succesfully!",
                         });
                     })
                     .catch(error => {

@@ -70,9 +70,10 @@ export default {
         login(context){
             context.commit("login");
         },
-        // update(context){
-        //     // state.currentUser.update(context);
-        // }
+
+        update(context){
+            context.commit("update");
+        }
 
     }
 };

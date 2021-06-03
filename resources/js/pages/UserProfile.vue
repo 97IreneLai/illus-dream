@@ -15,7 +15,7 @@
                                 <img class="profile" src="/img/default.png" alt="">
                             </div>
                             <div class="my-auto ml-5">
-                                <button type="submit" class="btn upload text"><img src="/img/upload.svg" class="pr-2" style="width:25px"/>new picture</button>
+                                <button type="submit" class="btn upload text"><img src="/img/upload.svg" class="pr-2" style="width:25px">new picture</button>
                             </div>
                         </div>
                         <div class="form-group col-10 p-0 m-0">
@@ -107,13 +107,12 @@ export default {
         }
     },
     watch: {
-        // currentUser (newData){
-        //         this.userForm = newData;
-        //     }
-        },
+        
+    },
 
     created () {
-        this.userForm = JSON.parse(JSON.stringify(this.$store.getters.currentUser));
+        // this.userForm = JSON.parse(JSON.stringify(this.$store.getters.currentUser));
+        this.getUser();
         this.handleView();
         window.addEventListener('resize', this.handleView);
     },
@@ -129,11 +128,13 @@ export default {
             const token = this.$store.getters.currentUser.token
             axios.get('/api/auth/userprofile',{
                 headers: {
-                    Authorization: `Bearer ${token}`
+                    Authorization: `Bearer ${token}`,
+                    "Content-Type": "application/json"
                 }
             })
             .then(response => {
-                this.userForm= response.data.user;
+                this.userForm.name = response.data.user.name;
+                this.userForm.email = response.data.user.email
             })
         },
 
@@ -156,11 +157,12 @@ export default {
                     this.userForm.email = response.data.email; 
                     swal({
                         icon: "success",
-                        text: "Update Succesfully!",
+                        text: "Update Succesfully!Please refresh the page.",
                     });   
                     this.$store.commit('update', { data: response.data });
                 })
         },
+
 
         handleView() {
           this.mobileView = window.innerWidth <= 995;
