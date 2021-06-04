@@ -102,6 +102,23 @@ class AuthController extends Controller
             $user = Auth::user();
             $user->name = $request->input('name','');
             $user->email = $request->input('email','');
+            $user->profile_image_url = $request->file('profile_image_url', 'public');
+
+
+
+            // $file_name = time().'_'.$request->file->getClientOriginalName();
+            // $file_path = $request->file('profile_image_url')->storeAs('uploads', $file_name, 'public');
+
+            // $user->profile_image_url  = '/storage/' . $file_path;
+
+            // if ($request->hasFile('profile_image_url')) {
+            //     $image = $request->file('profile_image_url');
+            //     $name = str_slug($request->title).'.'.$image->getClientOriginalExtension();
+            //     $destinationPath = public_path('../public/img/');
+            //     $imagePath = $destinationPath. "/".  $name;
+            //     $image->move($destinationPath, $name);
+            //     $user->profile_image_url = $name;
+            //   }
             $user->save();
         });
         return ['message' => 'Updated the user info sucessfully!'];

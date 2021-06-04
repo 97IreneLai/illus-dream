@@ -6,7 +6,7 @@
             <nav class="navbar navbar-expand-md col-12">
                 <div class="col-10 collapse navbar-collapse m-0 p-0">
                     <div class="navbar-nav pt-1 w-100" style="font-size:16px;">
-                        <button class="btn1 nav-item nav-link d-flex flex-column"
+                        <!-- <button class="btn1 nav-item nav-link d-flex flex-column"
                             @click="undo()" :disabled="!canUndo">
                             <svg xmlns="http://www.w3.org/2000/svg" class="align-self-center nav-icon" width="54" height="54" viewBox="0 0 54 54">
                                 <path id="FontAwsome_undo_" data-name="FontAwsome (undo)" d="M22.735,24.036H1.285A1.285,1.285,0,0,1,0,22.75V1.286A1.285,1.285,0,0,1,1.285,0H6.424A1.285,1.285,0,0,1,7.709,1.286V9.655A26.57,26.57,0,1,1,9.618,47.12a1.289,1.289,0,0,1-.05-1.866L13.2,41.614a1.282,1.282,0,0,1,1.756-.056,18.858,18.858,0,1,0-2.748-25.236H22.735a1.285,1.285,0,0,1,1.285,1.286V22.75A1.285,1.285,0,0,1,22.735,24.036Z" />
@@ -19,7 +19,7 @@
                                 <path id="FontAwsome_redo_" data-name="FontAwsome (redo)" d="M60.715,0H55.639a1.285,1.285,0,0,0-1.285,1.347l.428,8.867a26.571,26.571,0,1,0-2.435,36.939,1.286,1.286,0,0,0,.051-1.867l-3.64-3.643A1.284,1.284,0,0,0,47,41.583,18.856,18.856,0,1,1,50.2,16.907l-10.871-.522a1.285,1.285,0,0,0-1.346,1.286v5.08a1.285,1.285,0,0,0,1.285,1.286h21.45A1.285,1.285,0,0,0,62,22.751V1.286A1.285,1.285,0,0,0,60.715,0Z" transform="translate(-8)"/>
                             </svg>
                             <span>Redo</span>
-                        </button>
+                        </button> -->
                         <button class="btn1 nav-item nav-link d-flex flex-column"
                             @click="clear()">
                             <svg xmlns="http://www.w3.org/2000/svg" class="align-self-center nav-icon" width="54" height="54" viewBox="0 0 54 54">

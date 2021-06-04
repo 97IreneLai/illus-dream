@@ -7,18 +7,27 @@
             <div style="text-align:center">
                 <img class="bg-img-mobile" src="/img/profile-bg.png" alt="">
             </div>
-            <div class="col-6">
+            <div class="mt-4 mx-auto">
                 <ValidationObserver v-slot="{ handleSubmit }">
-                    <form @submit.prevent="handleSubmit(updateProfile)">
-                        <div class="d-flex py-4">
-                            <div>
-                                <img class="profile" src="/img/default.png" alt="">
+                    <form  @submit.prevent="handleSubmit(updateProfile)">
+                        <div class="form-group">
+                            <div style="text-align: center">
+                                <template v-if="!userForm.profile_image_url" >
+                                    <img class="profile" src="/img/default.png" alt="">
+                                </template>
+                                <template v-else>
+                                    <img class="profile" :src="userForm.profile_image_url" alt="profile">
+                                </template>
                             </div>
-                            <div class="my-auto ml-5">
-                                <button type="submit" class="btn upload text"><img src="/img/upload.svg" class="pr-2" style="width:25px">new picture</button>
+                            <div for="file-input" class="mt-3 text text-center">
+                                 <div for="file-input" class="text">
+                                    Upload new picture
+                                </div>
+                                <img src="/img/upload.svg" class="pr-2" style="width:33px"/>
+                                <input @change="onFileSelected" type="file" class="mt-3 text"/>
                             </div>
                         </div>
-                        <div class="form-group col-10 p-0 m-0">
+                        <div class="form-group p-0 m-0 mt-3">
                             <ValidationProvider name="Name" rules="required|alpha" v-slot="{ errors }">
                                 <label  class="text">Name</label>
                                 <input type="text" id="name" class="form-control form-text" placeholder="Enter your username" v-model="userForm.name">
@@ -26,14 +35,14 @@
                             </ValidationProvider>
                             <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
                         </div>
-                        <div class="form-group col-10 p-0 m-0 mt-4">
+                        <div class="form-group p-0 m-0 mt-3">
                             <ValidationProvider name="E-mail" rules="required|email" v-slot="{ errors }">
                                 <label class="text">Email</label>
                                 <input type="email" id="email"  class="form-control form-text" placeholder="Enter email" v-model="userForm.email">
                                 <span class="error-messsage">{{ errors[0] }}</span>
                             </ValidationProvider>
                         </div>
-                        <button type="submit" class="btn col-10 p-o save-but">SAVE CHANGES</button>
+                        <button type="submit" class="btn mb-5 p-o save-but-mobile">SAVE CHANGES</button>
                     </form>
                 </ValidationObserver>
             </div>
@@ -48,15 +57,19 @@
                         <div class="d-flex py-4">
                             <!-- <img class="profile" src="/img/profile.jpg" alt="" > -->
                             <div>
-                                <!-- <template v-if="!currentUser.profile_image_url" > -->
+                                <template v-if="!userForm.profile_image_url" >
                                     <img class="profile" src="/img/default.png" alt="">
-                                <!-- </template> -->
-                                <!-- <template v-else>
-                                    <div class="profile">{{currentUser.profile_image_url}}</div>
-                                </template> -->
+                                </template>
+                                <template v-else>
+                                    <img class="profile" :src="userForm.profile_image_url" alt="profile">
+                                </template>
                             </div>
                             <div class="my-auto ml-5">
-                                <button type="submit" class="btn upload text"><img src="/img/upload.svg" class="pr-2" style="width:25px"/>Upload new picture</button>
+                                 <div for="file-input" class="text">
+                                    Upload new picture
+                                </div>
+                                <img src="/img/upload.svg" class="pr-2" style="width:33px"/>
+                                <input @change="onFileSelected" type="file" class="mt-3 text"/>
                             </div>
                         </div>
                         <div class="form-group col-10 p-0 m-0">
@@ -100,7 +113,9 @@ export default {
         return {
             userForm: {
                 name: '',
-                email: '',  
+                email: '',
+                profile_image_url: '',
+
             },
             mobileView: true,
             error: null,
@@ -121,6 +136,7 @@ export default {
         currentUser(){
             return this.$store.getters.currentUser;
         },
+
     },
 
     methods: {
@@ -134,17 +150,26 @@ export default {
             })
             .then(response => {
                 this.userForm.name = response.data.user.name;
-                this.userForm.email = response.data.user.email
+                this.userForm.email = response.data.user.email;
+                this.userForm.profile_image_url = response.data.user.profile_image_url
             })
+        },
+
+        onFileSelected(event) {
+            console.log(event)
+            this.userForm.profile_image_url = event.target.files[0]
         },
 
         updateProfile () {
             const token = this.$store.getters.currentUser.token
-            // console.log(this.$store.getters.currentUser.token)
+            // let data = new FormData();
+            // data.append('profile_image_url', this.userForm.profile_image_url);
             axios.put('/api/auth/update-profile', 
-                {
+            {
                 name: this.userForm.name,    
                 email: this.userForm.email,
+                profile_image_url: this.userForm.profile_image_url
+                // profile_image_url: data
             },
             {
                 headers: {
@@ -153,8 +178,8 @@ export default {
                 }
             })
                 .then(response => {
-                    this.userForm.name = response.data.name;
-                    this.userForm.email = response.data.email; 
+                    // this.userForm.name = response.data.name;
+                    // this.userForm.email = response.data.email; 
                     swal({
                         icon: "success",
                         text: "Update Succesfully!Please refresh the page.",
@@ -216,6 +241,17 @@ export default {
         // border: 1px solid $primary-color;
         background: $primary-color;
         margin-top: 35px;
+    }
+
+     .save-but-mobile{
+        font-family: $primary-font;
+        font-size: 20px;
+        font-weight: 500;
+        color: white;
+        letter-spacing: 1px;
+        background: $primary-color;
+        margin-top: 35px;
+        width: 100%;
     }
 
     .text{
