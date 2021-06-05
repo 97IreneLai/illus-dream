@@ -16,11 +16,10 @@
                                     <path id="FontAwsome_ellipsis-h_" data-name="FontAwsome (ellipsis-h)" d="M44.561,192a8.229,8.229,0,1,1-8.226-8A8.11,8.11,0,0,1,44.561,192Zm11.882-8a8,8,0,1,0,8.226,8A8.11,8.11,0,0,0,56.444,184Zm-40.217,0a8,8,0,1,0,0,16,8,8,0,1,0,0-16Z" transform="translate(-8 -184)" fill="#284e5b"/>
                                 </svg>
                             </button>
-                                <div class="dropdown-menu dropdown-menu-right p-0 text-center">
-                                    <a class="dropdown-item text2" href="#">Edit</a>
-                                    <a class="dropdown-item text2" href="#">Delete</a>
-                                </div> 
-
+                            <div class="dropdown-menu dropdown-menu-right p-0 text-center">
+                                <a class="dropdown-item text2" href="#">Edit</a>
+                                <a class="dropdown-item text2"  @click.prevent="onDelete(item.id)">Delete</a>
+                            </div> 
                         </div>
                     </div>
                 </div>
@@ -54,6 +53,28 @@ export default {
                     this.hasIllustration = response.data.hasIllustration
                 })
         },
+
+        onDelete(id) {
+            const token = this.$store.getters.currentUser.token
+            axios.delete(`/api/illustration/${id}`, {
+                 headers: {
+                    Authorization: `Bearer ${token}`,
+                    // "Content-Type": "application/json"
+                }
+            })
+            .then(response => {
+                // this.items.data.splice(index, 1);
+                let index = this.items.findIndex(item => item.id === id);
+                this.items.splice(index, 1);
+                swal({
+                        icon: "success",
+                        text: "Delete Succesfully!",
+                }); 
+            })
+            .catch(error => {
+                console.log(error);
+            })
+        }
     },
 
     mounted () {

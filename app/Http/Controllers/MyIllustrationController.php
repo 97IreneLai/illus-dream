@@ -45,4 +45,14 @@ class MyIllustrationController extends Controller
             'hasIllustration' => count($myillus) > 0,
         ]);
     }
+
+   
+    public function destroy($id)
+    {
+        // MyIllustration::destroy($id);
+        $item = MyIllustration::findOrFail($id);
+        $item->delete();
+
+        return response()->json('successfully deleted');
+    }
 }

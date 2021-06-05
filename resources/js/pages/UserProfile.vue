@@ -192,6 +192,10 @@ export default {
         handleView() {
           this.mobileView = window.innerWidth <= 995;
         }
+    },
+
+    mounted () {
+        this.updateProfile ()
     }
 
 }

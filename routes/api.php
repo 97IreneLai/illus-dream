@@ -31,6 +31,7 @@ Route::group(['prefix' => 'illustration'], function ($router) {
     Route::post('/',  [MyIllustrationController::class, 'saveIllus']);
     Route::get('/my-illustration', [MyIllustrationController::class, 'getIllus']);
     Route::get('/', [IllustrationGalleryController::class, 'getIllustrationGallery']);
+    Route::delete('/{id}', [MyIllustrationController::class, 'destroy']);
 });
 
 //basic route
