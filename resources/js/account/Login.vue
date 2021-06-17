@@ -8,7 +8,9 @@
                         <div class="card">
                             <div slot="top-right">
                                 <button @click="$modal.hide('login')" class="btn1 pr-2" style="float: right">
-                                    <i class="fas fa-window-close fa-2x"></i>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 79.273 69.727">
+                                        <path id="FontAwsome_window-close_" data-name="FontAwsome (window-close)" d="M71.841,32H7.432A7.453,7.453,0,0,0,0,39.471V94.257a7.453,7.453,0,0,0,7.432,7.471H71.841a7.453,7.453,0,0,0,7.432-7.471V39.471A7.453,7.453,0,0,0,71.841,32ZM58.9,77.214a1.923,1.923,0,0,1,0,2.708l-6.271,6.3a1.9,1.9,0,0,1-2.694,0l-10.3-10.444L29.34,86.225a1.9,1.9,0,0,1-2.694,0l-6.271-6.3a1.923,1.923,0,0,1,0-2.708l10.389-10.35L20.376,56.514a1.923,1.923,0,0,1,0-2.708l6.271-6.3a1.9,1.9,0,0,1,2.694,0l10.3,10.444L49.933,47.5a1.9,1.9,0,0,1,2.694,0l6.271,6.3a1.923,1.923,0,0,1,0,2.708L48.508,66.864Z" transform="translate(0 -32)" fill="#284e5b"/>
+                                    </svg>
                                 </button>
                             </div> 
                         <!-- alert if any error -->
@@ -119,9 +121,6 @@ import { login } from'../auth';
             }
         },
 
-        // props: ['open'],
-
-          mounted (){}
       
     };
     
@@ -133,6 +132,8 @@ import { login } from'../auth';
     .bottom-text{
         color: $secondary-color;
         font-family: $bold-font;
+        font-size: 14.4px;
+        padding-right: 10px;
     }
 
     button{
@@ -296,28 +297,6 @@ import { login } from'../auth';
     .sm-text {
         font-size: 15px;
     }
-
-    // @media screen and (max-width: 992px) {
-    //     .card1 {
-    //         width: 100%;
-    //     }
-
-    //     .right {
-    //         margin-top: 100px !important;
-    //         margin-bottom: 100px !important
-    //     }
-    // }
-
-    // @media screen and (max-width: 768px) {
-    //     .container {
-    //         padding: 10px !important
-    //     }
-
-    //     .right {
-    //         margin-top: 50px !important;
-    //         margin-bottom: 50px !important
-    //     }
-    // }
 }
 
 </style>

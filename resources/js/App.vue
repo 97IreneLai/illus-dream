@@ -1,8 +1,7 @@
 <template>
     <div>
-      <NavigationMobile />
+      <NavigationMobile v-if="mobileView"/>
       <div class="content" :class="{'open': showNav}">
-          <!-- <div v-if="mobileView" class="d-flex pt-2"> -->
           <div v-if="$route.path !='/createillus'" >
             <div v-if="mobileView" class="d-flex">
                 <div class="navigation-icon m-3"

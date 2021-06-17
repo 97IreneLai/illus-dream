@@ -29,7 +29,7 @@
                         <template v-if="!currentUser">
                             <li class="nav-item" >
                                 <button @click.prevent="showModal" type="button" class="nav-button btn btn1 btn-default" style="padding:8px">Sign In</button>
-                                <login ref="loginModal"></login>
+                                <login ref="loginModal"/>
                                 <register/>
                             </li>
                         </template>
